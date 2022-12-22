@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+
+    <h1>Home</h1>
+    <p>
+        <%= para %>
+    </p>
+    <% posts.forEach(post=> { %>
+        <h1>
+            <%= post.title %>
+        </h1>
+        <p>
+            <%= post.content.substring(1,100)+"..." %>
+                <a href="/post/<%=post.id %> ">Read more</a>
+        </p>
+        <% }) %>
+
+            <a class="btn btn-primary" href="/compose" role="button" id="newpost">New Post</a>
+            <%- include('partials/footer') -%>
